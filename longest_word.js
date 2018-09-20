@@ -17,21 +17,20 @@ function LongestWord(sen) {
 LongestWord("?Meow kitty cool@pumpkin*&@patchma/dn? sup okay$@"); // pumkin
 
 
-/* How they solved  */
+/* How They did */
 function LongestWord2(sen) {
-
+  // match is string func which uses regex and returns array of matches []
+  // so this matches anything a-z 0-9
   var arr = sen.match(/[a-z0-9]+/gi);
 
-  // the array sort function takes a function as a parameter
-  // which is used to compare each element in the array to the
-  // next element in the array
+  // sort is array func that takes param a b returns new array based on how you want it sorted
+  // take the length of the next index minus the first. it will be negative if a is larger or positive if b is
   var sorted = arr.sort(function (a, b) {
     return b.length - a.length;
   });
 
-  // this array now contains all the words in the original
-  // string but in order from longest to shortest length
-  // so we simply return the first element
+  // this array now contains all the words in the original but long-short so just return the first
+
   return sorted[0];
 
 }
